@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Почтовое отделение</title>
+  <link rel="stylesheet" href="add.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Ввод информации об отправлении</h1>
+</header>
+
+<form>
+  <label for="recipient">Уникальный номер получателя:</label>
+  <input type="text" id="recipient" name="recipient" required>
+
+  <label for="sender">Уникальный номер отпрвителя:</label>
+  <input type="text" id="sender" name="sender" required>
+
+  <label for="index_start">Индекс места отправления:</label>
+  <input type="text" id="index_start" name="index_start" required>
+
+  <label for="index_end">Индекс места приема:</label>
+  <input type="text" id="index_end" name="index_end" required>
+
+  <label for="id_type">Уникальный номер вида:</label>
+  <input type="text" id="id_type" name="id_type" required>
+
+  <label for="id_group">Уникальный номер группы:</label>
+  <input type="text" id="id_group" name="id_group" required>
+
+  <label for="opcode">Код операции:</label>
+  <input type="text" id="opcode" name="opcode" required>
+
+  <label for="id_employee">Уникальный номер сотрудника:</label>
+  <input type="text" id="id_employee" name="id_employee" required>
+
+  <label for="weight">Вес:</label>
+  <input type="text" id="weight" name="weight" required>
+
+  <label for="retention_period">Срок хранения:</label>
+  <input type="date" id="retention_period" name="retention_period" required>
+
+  <button type="submit">Добавить данные</button>
+</form>
+
+</body>
+
+</html>

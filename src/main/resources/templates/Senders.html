@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Почтовое отделение</title>
+    <link rel="stylesheet" href="table.css">
+</head>
+
+<body>
+<nav th:insert="~{navigation::nav}"/>
+<header>
+    <h1>Информация об отправителе</h1>
+</header>
+
+<section>
+    <table>
+        <thead>
+        <tr>
+            <th>Уникальный номер отправителя</th>
+            <th>Уникальный номер страны</th>
+            <th>Уникальный номер посетителя</th>
+            <th>Уникальный номер организации</th>
+            <th>Адрес</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="Senders:${Senders}">
+            <td th:text="${Senders.id_sender}"></td>
+            <td th:text="${Senders.id_country}"></td>
+            <td th:text="${Senders.id_people}"></td>
+            <td th:text="${Senders.id_org}"></td>
+            <td th:text="${Senders.address}"></td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+<div class="block">
+    <a class="add" href="addSenders">Добавить отправителя</a><a class="add" href="updateSenders">Редактировать данные</a><a class="add" href="deleteSenders">Удалить запись</a>
+</div>
+
+
+</body>
+
+</html>

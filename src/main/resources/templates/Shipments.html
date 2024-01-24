@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Почтовое отделение</title>
+  <link rel="stylesheet" href="table.css">
+</head>
+
+<body>
+<nav th:insert="~{navigation::nav}"/>
+<header>
+  <h1>Информация об отправлении</h1>
+</header>
+
+<section>
+  <table>
+    <thead>
+    <tr>
+      <th>Уникальный номер отправления</th>
+      <th>Уникальный номер получателя</th>
+      <th>Уникальный номер отпрвителя</th>
+      <th>Индекс места отправления</th>
+      <th>Индекс места приема</th>
+      <th>Уникальный номер вида</th>
+      <th>Уникальный номер группы</th>
+      <th>Код операции</th>
+      <th>Уникальный номер сотрудника</th>
+      <th>Вес</th>
+      <th>Срок хранения</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="Shipments:${Shipments}">
+      <td th:text="${Shipments.id_shipm}"></td>
+      <td th:text="${Shipments.recipient}"></td>
+      <td th:text="${Shipments.sender}"></td>
+      <td th:text="${Shipments.index_start}"></td>
+      <td th:text="${Shipments.index_end}"></td>
+      <td th:text="${Shipments.id_type}"></td>
+      <td th:text="${Shipments.id_group}"></td>
+      <td th:text="${Shipments.opcode}"></td>
+      <td th:text="${Shipments.id_employee}"></td>
+      <td th:text="${Shipments.weight}"></td>
+      <td th:text="${Shipments.retention_period}"></td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+<div class="block">
+  <a class="add" href="addShipments">Добавить отправление</a><a class="add" href="updateShipments">Редактировать данные</a><a class="add" href="deleteShipments">Удалить запись</a>
+</div>
+
+
+</body>
+
+</html>

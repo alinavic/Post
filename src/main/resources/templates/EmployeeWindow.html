@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Почтовое отделение</title>
+    <link rel="stylesheet" href="table.css">
+</head>
+
+<body>
+<nav th:insert="~{navigation::nav}"/>
+<header>
+    <h1>Информация об окне сотрудника</h1>
+</header>
+
+<section>
+    <table>
+        <thead>
+        <tr>
+            <th>Уникальный номер сотрудника</th>
+            <th>Уникальный номер окна приема</th>
+            <th>Дата смены</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="EmployeeWindow:${EmployeeWindow}">
+            <td th:text="${EmployeeWindow.id_employee}"></td>
+            <td th:text="${EmployeeWindow.id_reception_window}"></td>
+            <td th:text="${EmployeeWindow.date_change}"></td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+<div class="block">
+    <a class="add" href="addEmployeeWindow">Добавить окно сотрудника</a><a class="add" href="deleteEmployeeWindow">Удалить запись</a>
+</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Почтовое отделение</title>
+    <link rel="stylesheet" href="table.css">
+</head>
+<body>
+
+<nav th:insert="~{navigation::nav}"/>
+
+<header>
+    <h1>Информация об должности</h1>
+</header>
+
+<section>
+    <table>
+        <thead>
+        <tr>
+            <th>Уникальный номер должности</th>
+            <th>Наименование</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="Position:${Position}">
+            <td th:text="${Position.id_position}"></td>
+            <td th:text="${Position.name_pos}"></td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+
+<div class="block">
+    <a class="add" href="addPosition">Добавить должностьу</a><a class="add" href="updatePosition">Редактировать данные</a><a class="add" href="deletePosition">Удалить запись</a>
+</div>
+
+</body>
+</html>

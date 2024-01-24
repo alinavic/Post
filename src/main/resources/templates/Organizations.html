@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Почтовое отделение</title>
+    <link rel="stylesheet" href="table.css">
+</head>
+
+<body>
+<nav th:insert="~{navigation::nav}"/>
+<header>
+    <h1>Информация об организации</h1>
+</header>
+
+<section>
+    <table>
+        <thead>
+        <tr>
+            <th>Уникальный номер организации</th>
+            <th>Имя представителя организации</th>
+            <th>Код</th>
+            <th>Почта</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="Organizations:${Organizations}">
+            <td th:text="${Organizations.id_org}"></td>
+            <td th:text="${Organizations.name_repres_org}"></td>
+            <td th:text="${Organizations.code_org}"></td>
+            <td th:text="${Organizations.mail_org}"></td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+<div class="block">
+    <a class="add" href="addOrganizations">Добавить организацию</a><a class="add" href="updateOrganizations">Редактировать данные</a><a class="add" href="deleteOrganizations">Удалить запись</a>
+</div>
+
+
+</body>
+
+</html>

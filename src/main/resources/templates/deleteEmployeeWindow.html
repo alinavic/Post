@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Почтовое отделение</title>
+    <link rel="stylesheet" href="add.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Удаление информации об окне сотрудника</h1>
+</header>
+
+<form>
+    <label for="id_employee">Уникальный номер сотрудника</label>
+    <select id="id_employee" name="id_employee">
+        <div th:each="EmployeeWindow:${EmployeeWindow}">
+            <option th:text="${EmployeeWindow.id_employee}"></option>
+        </div>
+    </select>
+
+    <label for="id_reception_window">Уникальный номер окна приема</label>
+    <select id="id_reception_window" name="id_reception_window">
+        <div th:each="EmployeeWindow:${EmployeeWindow}">
+            <option th:text="${EmployeeWindow.id_reception_window}"></option>
+        </div>
+    </select>
+
+    <label for="date_change">Дата смены</label>
+    <select id="date_change" name="date_change">
+        <div th:each="EmployeeWindow:${EmployeeWindow}">
+            <option th:text="${EmployeeWindow.date_change}"></option>
+        </div>
+    </select>
+
+    <button type="submit">Удалить</button>
+</form>
+
+</body>
+
+</html>

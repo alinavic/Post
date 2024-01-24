@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Почтовое отделение</title>
+    <link rel="stylesheet" href="add.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Изменение информации об должности</h1>
+</header>
+
+<form>
+    <label for="id_position">Уникальный номер страны</label>
+    <select id="id_position" name="id_position">
+        <div th:each="Position:${Position}">
+            <option th:text="${Position.id_position}"></option>
+        </div>
+    </select>
+
+    <label for="name_pos">Наименование:</label>
+    <input type="text" id="name_pos" name="name_pos">
+
+    <button type="submit">Изменить данные</button>
+</form>
+
+</body>
+
+</html>

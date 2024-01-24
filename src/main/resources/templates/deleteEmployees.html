@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Почтовое отделение</title>
+  <link rel="stylesheet" href="add.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Удаление информации о сотруднике</h1>
+</header>
+
+<form>
+  <label for="id_employee">Уникальный номер посетителя</label>
+  <select id="id_employee" name="id_employee">
+    <div th:each = "Employees : ${Employees}">
+      <option th:text = "${Employees.id_employee}"></option>
+    </div>
+  </select>
+
+  <button type="submit">Удалить</button>
+</form>
+
+</body>
+
+</html>

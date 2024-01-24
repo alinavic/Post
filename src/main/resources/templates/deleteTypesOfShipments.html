@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Почтовое отделение</title>
+    <link rel="stylesheet" href="add.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Удаление информации об видах отправления</h1>
+</header>
+
+<form>
+    <label for="id_type">Уникальный номер вида</label>
+    <select id="id_type" name="id_type">
+        <div th:each="TypesOfShipments:${TypesOfShipments}">
+            <option th:text="${TypesOfShipments.id_type}"></option>
+        </div>
+    </select>
+
+    <button type="submit">Удалить</button>
+</form>
+
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Почтовое отделение</title>
+    <link rel="stylesheet" href="add.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Удаление информации об очереди</h1>
+</header>
+
+<form>
+    <label for="id_window">Уникальный номер окна:</label>
+    <select id="id_window" name="id_window">
+        <div th:each="Queue:${Queue}">
+            <option th:text="${Queue.id_window}"></option>
+        </div>
+    </select>
+
+    <label for="time_start">Время получения:</label>
+    <select id="time_start" name="time_start">
+        <div th:each="Queue:${Queue}">
+            <option th:text="${Queue.time_start}"></option>
+        </div>
+    </select>
+
+    <button type="submit">Удалить</button>
+</form>
+
+</body>
+
+</html>

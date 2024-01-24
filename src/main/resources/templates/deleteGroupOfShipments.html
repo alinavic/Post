@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Почтовое отделение</title>
+    <link rel="stylesheet" href="add.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Информация о группах отправлений</h1>
+</header>
+
+<form>
+    <label for="id_group">Уникальный номер посетителя</label>
+    <select id="id_group" name="id_group">
+        <div th:each="GroupOfShipments:${GroupOfShipments}">
+            <option th:text="${GroupOfShipments.id_group}"></option>
+        </div>
+    </select>
+
+    <button type="submit">Удалить</button>
+</form>
+
+</body>
+
+</html>

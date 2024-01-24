@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Почтовое отделение</title>
+    <link rel="stylesheet" href="add.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Изменение информации об стране</h1>
+</header>
+
+<form>
+    <label for="id_country">Уникальный номер страны</label>
+    <select id="id_country" name="id_country">
+        <div th:each = "Country : ${Country}">
+            <option th:text = "${Country.id_country}"></option>
+        </div>
+    </select>
+
+    <label for="name">Наименование:</label>
+    <input type="text" id="name" name="name">
+
+    <button type="submit">Изменить данные</button>
+</form>
+
+</body>
+
+</html>

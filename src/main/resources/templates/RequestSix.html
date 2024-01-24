@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Почтовое отделение</title>
+  <link rel="stylesheet" href="table.css">
+  <script src="request.js"></script>
+</head>
+
+<body>
+<nav th:insert="~{nav::nav}"/>
+
+<header>
+  <h1>Запрос 6</h1>
+</header>
+<strong><p>ТОП-5 самых популярных способов отправлений</p></strong>
+
+<section>
+  <table>
+    <thead>
+    <tr>
+      <th>Уникальный номер вида</th>
+      <th>Наименование</th>
+      <th>Кодичество отправлений</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="RequestSix:${RequestSix}">
+      <td th:text="${RequestSix.id_type}"></td>
+      <td th:text="${RequestSix.name}"></td>
+      <td th:text="${RequestSix.sum}"></td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+
+</body>
+
+</html>

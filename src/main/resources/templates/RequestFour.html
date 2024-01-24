@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Почтовое отделение</title>
+  <link rel="stylesheet" href="table.css">
+  <script src="request.js"></script>
+</head>
+
+<body>
+<nav th:insert="~{nav::nav}"/>
+
+<header>
+  <h1>Запрос 4</h1>
+</header>
+<p>Вывести информацию по отправлениям с объявленной ценностью, полученных в течение 24 часов до истечения срока их хранения</p>
+
+<div class="form">
+  <form>
+    <label for="cost">Ценность:</label>
+    <input type="text" id="cost" name="cost" required>
+
+    <button type="submit">Получить данные</button>
+  </form>
+</div>
+<strong><p th:text="${cost}" style="font-size: 22px"></p></strong>
+<section>
+  <table>
+    <thead>
+    <tr>
+      <th>Уникальный номер отправления</th>
+      <th>Уникальный номер получателя</th>
+      <th>Уникальный номер отпрвителя</th>
+      <th>Индекс места отправления</th>
+      <th>Индекс места приема</th>
+      <th>Уникальный номер вида</th>
+      <th>Уникальный номер группы</th>
+      <th>Код операции</th>
+      <th>Уникальный номер сотрудника</th>
+      <th>Вес</th>
+      <th>Срок хранения</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="RequestFour:${RequestFour}">
+      <td th:text="${RequestFour.id_shipm}"></td>
+      <td th:text="${RequestFour.recipient}"></td>
+      <td th:text="${RequestFour.sender}"></td>
+      <td th:text="${RequestFour.index_start}"></td>
+      <td th:text="${RequestFour.index_end}"></td>
+      <td th:text="${RequestFour.id_type}"></td>
+      <td th:text="${RequestFour.id_group}"></td>
+      <td th:text="${RequestFour.opcode}"></td>
+      <td th:text="${RequestFour.id_employee}"></td>
+      <td th:text="${RequestFour.weight}"></td>
+      <td th:text="${RequestFour.retention_period}"></td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+
+</body>
+
+</html>

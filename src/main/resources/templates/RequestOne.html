@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Почтовое отделение</title>
+  <link rel="stylesheet" href="table.css">
+  <script src="request.js"></script>
+</head>
+
+<body>
+<nav th:insert="~{nav::nav}"/>
+
+<header>
+  <h1>Запрос 1</h1>
+</header>
+<p> Определить количество посылок, отправленных как индивидуальными предпринимателями, так и организациями (итоги считаются раздельно!), по всем странам-отправителям за заданный период времени. Если из страны не было отправлений, то напротив указать фразу «Отправления отсутствуют» (CUBE, ROLLUP);</p>
+
+<div class="form">
+  <label for="dataType">Выберите тип данных:</label>
+  <select id="dataType" onchange="toggleForm()">
+    <option style="display:none"> </option>
+    <option value="people">Индивидуальные предприниматели</option>
+    <option value="organization">Организации</option>
+  </select>
+</div>
+
+<div id="peopleForm" class="hidden">
+  <section>
+    <table>
+      <thead>
+      <tr>
+        <th>Количество отправлений</th>
+        <th>Страны</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="one:${one}">
+        <td th:text="${one.count}"></td>
+        <td th:text="${one.country}"></td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+</div>
+
+<div id="organizationForm" class="hidden">
+  <section>
+    <table>
+      <thead>
+      <tr>
+        <th>Количество отправлений</th>
+        <th>Страны</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="two:${two}">
+        <td th:text="${two.count}"></td>
+        <td th:text="${two.country}"></td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+</div>
+
+</body>
+
+</html>

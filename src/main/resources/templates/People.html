@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Почтовое отделение</title>
+  <link rel="stylesheet" href="table.css">
+</head>
+
+<body>
+<nav th:insert="~{navigation::nav}"/>
+<header>
+  <h1>Информация о посетителях</h1>
+</header>
+
+<section>
+  <table>
+    <thead>
+    <tr>
+      <th>Уникальный номер посетителя</th>
+      <th>ФИО</th>
+      <th>Пол</th>
+      <th>Дата рождения</th>
+      <th>Паспортные данные</th>
+      <th>Номер телефона</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="People:${People}">
+      <td th:text="${People.id_people}"></td>
+      <td th:text="${People.full_name}"></td>
+      <td th:text="${People.gender}"></td>
+      <td th:text="${People.birthdate}"></td>
+      <td th:text="${People.passport_inf}"></td>
+      <td th:text="${People.phone_number}"></td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+<div class="block">
+  <a class="add" href="addPeople">Добавить посетителя</a><a class="add" href="updatePeople">Редактировать данные</a><a class="add" href="deletePeople">Удалить запись</a>
+</div>
+
+
+</body>
+
+</html>

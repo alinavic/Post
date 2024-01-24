@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Почтовое отделение</title>
+    <link rel="stylesheet" href="table.css">
+</head>
+
+<body>
+<nav th:insert="~{navigation::nav}"/>
+<header>
+    <h1>Информация об очереди</h1>
+</header>
+
+<section>
+    <table>
+        <thead>
+        <tr>
+            <th>Уникальный номер окна</th>
+            <th>Время получения</th>
+            <th>Талон</th>
+            <th>Время приема</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="Queue:${Queue}">
+            <td th:text="${Queue.id_window}"></td>
+            <td th:text="${Queue.time_start}"></td>
+            <td th:text="${Queue.ticket}"></td>
+            <td th:text="${Queue.time_reception}"></td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+<div class="block">
+    <a class="add" href="addQueue">Добавить очередь</a><a class="add" href="updateQueue">Редактировать данные</a><a class="add" href="deleteQueue">Удалить запись</a>
+</div>
+
+
+</body>
+
+</html>

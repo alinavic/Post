@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Почтовое отделение</title>
+    <link rel="stylesheet" href="add.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Ввод информации о сотруднике</h1>
+</header>
+
+<form>
+    <label for="full_name">ФИО:</label>
+    <input type="text" id="full_name" name="full_name" required>
+    <div class="gender-label">
+        <label for="gender">Пол:</label>
+        <input type="radio" id="gender" name="gender" value="Мужской" required> <span>Мужской</span>
+        <input type="radio" id="gender" name="gender" value="Женский" required> <span>Женский</span>
+    </div>
+
+    <label for="birthdate">Дата рождения:</label>
+    <input type="date" id="birthdate" name="birthdate" required>
+
+    <label for="salary">Зарплата:</label>
+    <input type="text" id="salary" name="salary" required>
+
+    <label for="id_position">Уникальный номер должности:</label>
+    <input type="text" id="id_position" name="id_position" placeholder="89999999999" required>
+
+    <button type="submit">Добавить данные</button>
+</form>
+
+</body>
+
+</html>

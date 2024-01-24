@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Почтовое отделение</title>
+    <link rel="stylesheet" href="table.css">
+    <script src="request.js"></script>
+</head>
+
+<body>
+<nav th:insert="~{nav::nav}"/>
+
+<header>
+    <h1>Запрос 8</h1>
+</header>
+<p>Отчет обо всех отправлениях, адресованных указанному получателю.</p>
+
+<div class="form">
+    <form>
+        <label for="full_name">ФИО:</label>
+        <input type="text" id="full_name" name="full_name" required>
+
+        <label for="passport_inf">Паспортные данные:</label>
+        <input type="text" id="passport_inf" name="passport_inf" required>
+
+        <button type="submit">Получить данные</button>
+    </form>
+</div>
+<strong><p th:text="${full_name}" style="font-size: 22px"></p></strong>
+<section>
+    <table>
+        <thead>
+        <tr>
+            <th>Уникальный номер отправления</th>
+            <th>Уникальный номер получателя</th>
+            <th>Уникальный номер отпрвителя</th>
+            <th>Индекс места отправления</th>
+            <th>Индекс места приема</th>
+            <th>Уникальный номер вида</th>
+            <th>Уникальный номер группы</th>
+            <th>Код операции</th>
+            <th>Уникальный номер сотрудника</th>
+            <th>Вес</th>
+            <th>Срок хранения</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="RequestEigth:${RequestEigth}">
+            <td th:text="${RequestEigth.id_shipm}"></td>
+            <td th:text="${RequestEigth.recipient}"></td>
+            <td th:text="${RequestEigth.sender}"></td>
+            <td th:text="${RequestEigth.index_start}"></td>
+            <td th:text="${RequestEigth.index_end}"></td>
+            <td th:text="${RequestEigth.id_type}"></td>
+            <td th:text="${RequestEigth.id_group}"></td>
+            <td th:text="${RequestEigth.opcode}"></td>
+            <td th:text="${RequestEigth.id_employee}"></td>
+            <td th:text="${RequestEigth.weight}"></td>
+            <td th:text="${RequestEigth.retention_period}"></td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+
+
+</body>
+
+</html>

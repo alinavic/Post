@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Почтовое отделение</title>
+    <link rel="stylesheet" href="add.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Изменение информации о сотруднике</h1>
+</header>
+
+<form>
+    <label for="id_employee">Уникальный номер посетителя</label>
+    <select id="id_employee" name="id_employee">
+        <div th:each = "Employees : ${Employees}">
+            <option th:text = "${Employees.id_employee}"></option>
+        </div>
+    </select>
+
+    <label for="full_name">ФИО:</label>
+    <input type="text" id="full_name" name="full_name">
+    <div class="gender-label">
+        <label for="gender">Пол:</label>
+        <input type="radio" id="gender" name="gender" value="Мужской"> <span>Мужской</span>
+        <input type="radio" id="gender" name="gender" value="Женский"> <span>Женский</span>
+    </div>
+
+    <label for="birthdate">Дата рождения:</label>
+    <input type="date" id="birthdate" name="birthdate">
+
+    <label for="salary">Зарплата:</label>
+    <input type="text" id="salary" name="salary">
+
+    <label for="id_position">Уникальный номер должности:</label>
+    <input type="text" id="id_position" name="id_position" placeholder="89999999999">
+
+    <button type="submit">Изменить данные</button>
+</form>
+
+</body>
+
+</html>

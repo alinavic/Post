@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Почтовое отделение</title>
+  <link rel="stylesheet" href="add.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Изменение информации окна приема</h1>
+</header>
+
+<form>
+
+  <label for="id_window">Уникальный номер окна:</label>
+  <select id="id_window" name="id_window">
+    <div th:each="ReceptionWindows:${ReceptionWindows}">
+      <option th:text="${ReceptionWindows.id_window}"></option>
+    </div>
+  </select>
+
+  <label for="window_number">Номер окна:</label>
+  <select id="window_number" name="window_number">
+    <div th:each="ReceptionWindows:${ReceptionWindows}">
+      <option th:text="${ReceptionWindows.window_number}"></option>
+    </div>
+  </select>
+
+  <label for="status">Статус:</label>
+  <input type="text" id="status" name="status">
+
+
+  <button type="submit">Изменить данные</button>
+</form>
+
+</body>
+
+</html>

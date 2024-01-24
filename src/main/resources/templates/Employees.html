@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Почтовое отделение</title>
+    <link rel="stylesheet" href="table.css">
+</head>
+
+<body>
+<nav th:insert="~{navigation::nav}"/>
+<header>
+    <h1>Информация об сотрудниках</h1>
+</header>
+
+<section>
+    <table>
+        <thead>
+        <tr>
+            <th>Уникальный номер сотрудника</th>
+            <th>ФИО</th>
+            <th>Пол</th>
+            <th>Дата рождения</th>
+            <th>Зарплата</th>
+            <th>Уникальный номер должности</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="Employees:${Employees}">
+            <td th:text="${Employees.id_employee}"></td>
+            <td th:text="${Employees.full_name}"></td>
+            <td th:text="${Employees.gender}"></td>
+            <td th:text="${Employees.birthdate}"></td>
+            <td th:text="${Employees.salary}"></td>
+            <td th:text="${Employees.id_position}"></td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+<div class="block">
+    <a class="add" href="addEmployees">Добавить сотрудника</a><a class="add" href="updateEmployees">Редактировать данные</a><a class="add" href="deleteEmployees">Удалить запись</a>
+</div>
+
+
+</body>
+
+</html>

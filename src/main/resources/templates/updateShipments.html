@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Почтовое отделение</title>
+    <link rel="stylesheet" href="add.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Изменение информации об отправлении</h1>
+</header>
+
+<form>
+    <label for="id_shipm">Уникальный номер отправления</label>
+    <select id="id_shipm" name="id_shipm">
+        <div th:each="Shipments:${Shipments}">
+            <option th:text="${Shipments.id_shipm}"></option>
+        </div>
+    </select>
+
+    <label for="recipient">Уникальный номер получателя:</label>
+    <input type="text" id="recipient" name="recipient">
+
+    <label for="sender">Уникальный номер отпрвителя:</label>
+    <input type="text" id="sender" name="sender">
+
+    <label for="index_start">Индекс места отправления:</label>
+    <input type="text" id="index_start" name="index_start">
+
+    <label for="index_end">Индекс места приема:</label>
+    <input type="text" id="index_end" name="index_end">
+
+    <label for="id_type">Уникальный номер вида:</label>
+    <input type="text" id="id_type" name="id_type">
+
+    <label for="id_group">Уникальный номер группы:</label>
+    <input type="text" id="id_group" name="id_group">
+
+    <label for="opcode">Код операции:</label>
+    <input type="text" id="opcode" name="opcode">
+
+    <label for="id_employee">Уникальный номер сотрудника:</label>
+    <input type="text" id="id_employee" name="id_employee" >
+
+    <label for="weight">Вес:</label>
+    <input type="text" id="weight" name="weight">
+
+    <label for="retention_period">Срок хранения:</label>
+    <input type="date" id="retention_period" name="retention_period">
+
+    <button type="submit">Изменить данные</button>
+</form>
+
+</body>
+
+</html>

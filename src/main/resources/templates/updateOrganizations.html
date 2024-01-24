@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Почтовое отделение</title>
+    <link rel="stylesheet" href="add.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Изменение информации об посетителе</h1>
+</header>
+
+<form>
+    <label for="id_org">Уникальный номер организации</label>
+    <select id="id_org" name="id_org">
+        <div th:each = "Organizations : ${Organizations}">
+            <option th:text = "${Organizations.id_org}"></option>
+        </div>
+    </select>
+
+    <label for="code_org">Код организации:</label>
+    <input type="text" id="code_org" name="code_org">
+
+    <label for="name_repres_org">Имя представителя организации:</label>
+    <input type="text" id="name_repres_org" name="name_repres_org">
+
+    <label for="mail_org">Почта:</label>
+    <input type="text" id="mail_org" name="mail_org" placeholder="example@exam.ru">
+
+    <button type="submit">Изменить данные</button>
+</form>
+
+</body>
+
+</html>

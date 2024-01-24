@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Почтовое отделение</title>
+    <link rel="stylesheet" href="add.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Изменение информации об видах отправления</h1>
+</header>
+
+<form>
+    <label for="id_type">Уникальный номер вида</label>
+    <select id="id_type" name="id_type">
+        <div th:each="TypesOfShipments:${TypesOfShipments}">
+            <option th:text="${TypesOfShipments.id_type}"></option>
+        </div>
+    </select>
+
+    <label for="name">Наименование:</label>
+    <input type="text" id="name" name="name">
+
+    <label for="cost">Ценность:</label>
+    <input type="text" id="cost" name="cost">
+
+    <label for="price">Стоимость:</label>
+    <input type="text" id="price" name="price">
+
+    <button type="submit">Изменить данные</button>
+</form>
+
+</body>
+
+</html>
